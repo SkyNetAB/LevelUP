@@ -15,7 +15,7 @@ public class Main extends JavaPlugin {
 	public static Economy econ = null;
 
 	public void onEnable() {
-		log.info("~~~Enabled LevelUP2.0.~~~");
+		log.info("~~~Enabled LevelUP~~~");
 
 		getServer().getPluginManager()
 				.registerEvents(new PowerListener(), this);
@@ -29,7 +29,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public void onDisable() {
-		log.info("~~~Disabled LevelUP2.0.~~~");
+		log.info("~~~Disabled LevelUP~~~");
 		log.info(String.format("[%s] Disabled Version %s", new Object[] {
 				getDescription().getName(), getDescription().getVersion() }));
 	}

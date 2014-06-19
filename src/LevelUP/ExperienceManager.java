@@ -70,7 +70,7 @@ public class ExperienceManager
   
   public void changeExp(int amt)
   {
-    changeExp(amt);
+    changeExp((double)amt);
   }
   
   public void changeExp(double amt)

@@ -49,18 +49,16 @@ public class Main extends JavaPlugin {
 			return true;
 		}
 		Player player = (Player) sender;
-		ExperienceManager expMan = new ExperienceManager(player);
-		int pxp = expMan.getCurrentExp();
+		ExperienceManager exp_man = new ExperienceManager(player);
+		int current_xp = exp_man.getCurrentExp();
 		double bal = econ.getBalance(player.getName());
-		int money = (int) bal;
-		int monexp = money + pxp;
 		if (label.equalsIgnoreCase("savexp")) {
-			EconomyResponse r = econ.depositPlayer(player.getName(), pxp);
+			EconomyResponse r = econ.depositPlayer(player.getName(),current_xp);
 			if (r.transactionSuccess()) {
-				expMan.changeExp(pxp * -1);
-				sender.sendMessage("You saved all your experience and were given $" + pxp + ". You now have a balance of $" + monexp + ".");
+				exp_man.changeExp((double)current_xp*-1);
+				sender.sendMessage("You saved all your experience and were given $" + current_xp + ". You now have a balance of $" + econ.getBalance(player.getName()) + ".");
 			} else {
-				sender.sendMessage("Could not save your experience. You have " + pxp + " xp and a balance of $" + bal + ".");
+				sender.sendMessage("Could not save your experience. You have " + current_xp + " xp and a balance of $" + bal + ".");
 			}
 			return true;
 		}else if (label.equalsIgnoreCase("takexp")) {
@@ -73,16 +71,16 @@ public class Main extends JavaPlugin {
 					entire_bal=false;
 				}
 			}
-			EconomyResponse r = econ.withdrawPlayer(player.getName(), bal);
+			EconomyResponse r = econ.withdrawPlayer(player.getName(),bal);
 			if (r.transactionSuccess()) {
-				expMan.changeExp(bal);
+				exp_man.changeExp(bal);
 				if (!entire_bal) {
 					sender.sendMessage("You withdrew $"+bal+".");
 				}else{
-					sender.sendMessage("You took all your saved experience and were given " + money + " xp.");
+					sender.sendMessage("You took all your saved experience and were given " + bal + " xp.");
 				}
 			} else {
-				sender.sendMessage("Could not take your experience. You have " + pxp + "xp.");
+				sender.sendMessage("Could not take your experience. You have " + current_xp + "xp.");
 			}
 			return true;
 		}

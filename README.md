@@ -12,8 +12,8 @@ Building LevelUP Repo
 ###PART I :: Eclispe Setup
 1. Install Eclipse, if you don't already have it,
 2. After downloading (cloning or unzipping) the LevelUP source code, create a workbench in Eclipse in whatever folder the LevelUP folder is in,
-⋅⋅⋅For example, if your folder tree is set up like this: C:\GitHub\LevelUP
-⋅⋅⋅'C:\GitHub' would be your workbench
+   For example, if your folder tree is set up like this: C:\GitHub\LevelUP  
+   'C:\GitHub' would be your workbench  
 3. Click workbench in the upper-right hand corner,
 4. Click File > New > Java Project,
 5. In the new window (New Java Project), Project name: LevelUP and click Finish.

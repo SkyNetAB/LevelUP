@@ -26,4 +26,16 @@ For example, if your folder tree is set up like this: C:\GitHub\LevelUP,
 ######3) Select the Vault and Craftbukkit JAR files and click Open,
 ######4) Click OK in the Properties window to close it.
 
+Permissions
+------
+#####__levelup.*__ Gives permissions to all LevelUP commands.
+#####__levelup.savexp__ Saves your hard-earned experience.
+#####__levelup.takexp__ Converts your experience into currency.
+
+Command Usage
+------
+#####__/savexp__ will convert all your experience points and convert them into currency. (1xp point = $1)
+#####__/takexp__ will convert all your currency and convert it into xp points.
+#####__/takexp <amount>__ will convert a portion of your currency and convert it into the same amount of xp points.
+
 https://github.com/SkyNetAB/LevelUP

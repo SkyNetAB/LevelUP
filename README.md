@@ -28,14 +28,14 @@ For example, if your folder tree is set up like this: C:\GitHub\LevelUP,
 
 Permissions
 ------
-###### __ levelup.* __ Gives permissions to all LevelUP commands.
-###### ** levelup.savexp ** Saves your hard-earned experience.
-###### ** levelup.takexp ** Converts your experience into currency.
+######`levelup.*` Gives permissions to all LevelUP commands.
+######`levelup.savexp` Saves your hard-earned experience.
+######`levelup.takexp` Converts your experience into currency.
 
 Command Usage
 ------
-###### ** /savexp ** will convert all your experience points and convert them into currency. (1xp point = $1)
-###### ** /takexp ** will convert all your currency and convert it into xp points.
-###### ** /takexp <amount> ** will convert a portion of your currency and convert it into the same amount of xp points.
+######`/savexp` will convert all your experience points and convert them into currency. (1xp point = $1)
+######`/takexp` will convert all your currency and convert it into xp points.
+######`/takexp <amount>` will convert a portion of your currency and convert it into the same amount of xp points.
 
 https://github.com/SkyNetAB/LevelUP

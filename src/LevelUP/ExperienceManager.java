@@ -5,6 +5,26 @@ import java.util.Arrays;
 import org.apache.commons.lang.Validate;
 import org.bukkit.entity.Player;
 
+/**
+ * @author desht
+ *
+ *         Editted by SexyDexyDoo for LevelUP
+ * 
+ *         Adapted from ExperienceUtils code originally in ScrollingMenuSign.
+ *
+ *         Credit to nisovin
+ *         (http://forums.bukkit.org/threads/experienceutils-make-giving-taking-exp
+ *         -a-bit-more-intuitive.54450/#post-1067480) for an implementation that avoids the problems
+ *         of getTotalExperience(), which doesn't work properly after a player has enchanted
+ *         something.
+ *
+ *         Credit to comphenix for further contributions: See
+ *         http://forums.bukkit.org/threads/experiencemanager
+ *         -was-experienceutils-make-giving-taking-
+ *         exp-a-bit-more-intuitive.54450/page-3#post-1273622
+ *
+ */
+ 
 public class ExperienceManager
 {
   private static int hardMaxLevel = 100000;

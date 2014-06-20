@@ -1,0 +1,30 @@
+name: LevelUP
+main: LevelUP.Main
+version: 2.3
+website: http://skynet.atomicbase.com
+depend: [Vault]
+
+commands:
+  savexp:
+    description: Save your experience for safe-keeping.
+    aliases: [saveexp, save-xp, save-exp]
+    permission: levelup.savexp
+    usage: Syntax error! Type /&lt;command&gt; to save your XP.
+  takexp:
+    description: Take your saved experience. Use /takexp <amount> to take a specific amount from your balance.
+    aliases: [takeexp, take-xp, take-exp]
+    permission: levelup.takexp
+    usage: Syntax error! Type /&lt;command&gt; to take your XP.
+
+permissions:
+  levelup.*:
+    description: Gives permission for all LevelUP commands.
+    children:
+      levelup.savexp: true
+      levelup.takexp: true
+    levelup.savexp:
+      description: Save your hard-earned experience.
+      default: true
+    levelup.takexp:
+      description: Take your saved up experience.
+      default: true

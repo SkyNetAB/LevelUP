@@ -2,6 +2,7 @@ package LevelUP;
 
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
+
 import org.apache.commons.lang.Validate;
 import org.bukkit.entity.Player;
 
@@ -40,7 +41,7 @@ public class ExperienceManager
   public ExperienceManager(Player player)
   {
     Validate.notNull(player, "Player cannot be null");
-    this.player = new WeakReference(player);
+    this.player = new WeakReference<Player>(player);
     this.playerName = player.getName();
   }
   
@@ -51,7 +52,7 @@ public class ExperienceManager
   
   public static void setHardMaxLevel(int hardMaxLevel)
   {
-    hardMaxLevel = hardMaxLevel;
+    ExperienceManager.hardMaxLevel = hardMaxLevel;
   }
   
   private static void initLookupTables(int maxLevel)

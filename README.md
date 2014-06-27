@@ -5,9 +5,9 @@ LevelUP
 
 Building LevelUP Repo
 ------
-#####We build the plugin with Eclipse.. (http://www.eclipse.org/downloads/)
-#####You will also need Vault.. (http://dev.bukkit.org/bukkit-plugins/vault/)
-#####And Craftbukkit.. (http://dl.bukkit.org/downloads/craftbukkit/get/02535_1.7.2-R0.3/craftbukkit-beta.jar)
+######We build the plugin with Eclipse.. (http://www.eclipse.org/downloads/)
+######You will also need Vault.. (http://dev.bukkit.org/bukkit-plugins/vault/)
+######And Craftbukkit.. (http://dl.bukkit.org/downloads/craftbukkit/get/02535_1.7.2-R0.3/craftbukkit-beta.jar)
 
 ###PART I :: Eclispe Setup
 ######1) Install Eclipse, if you don't already have it,
@@ -25,5 +25,17 @@ For example, if your folder tree is set up like this: C:\GitHub\LevelUP,
 ######2) Click Java Build Path, then Libraries, then Add External JARs..,
 ######3) Select the Vault and Craftbukkit JAR files and click Open,
 ######4) Click OK in the Properties window to close it.
+
+Permissions
+------
+######`levelup.*` Gives permissions to all LevelUP commands.
+######`levelup.savexp` Saves your hard-earned experience.
+######`levelup.takexp` Converts your experience into currency.
+
+Command Usage
+------
+######`/savexp` will convert all your experience points and convert them into currency. (1xp point = $1)
+######`/takexp` will convert all your currency and convert it into xp points.
+######`/takexp <amount>` will convert a portion of your currency and convert it into the same amount of xp points.
 
 https://github.com/SkyNetAB/LevelUP

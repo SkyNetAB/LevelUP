@@ -1,8 +1,11 @@
 package LevelUP;
 
 import java.util.logging.Logger;
+
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
+
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -15,7 +18,7 @@ public class Main extends JavaPlugin {
 	public static Economy econ = null;
 
 	public void onEnable() {
-		log.info("~~~Enabled LevelUP2.0.~~~");
+		log.info("~~~Enabled LevelUP~~~");
 
 		getServer().getPluginManager()
 				.registerEvents(new PowerListener(), this);
@@ -29,7 +32,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public void onDisable() {
-		log.info("~~~Disabled LevelUP2.0.~~~");
+		log.info("~~~Disabled LevelUP~~~");
 		log.info(String.format("[%s] Disabled Version %s", new Object[] {
 				getDescription().getName(), getDescription().getVersion() }));
 	}
@@ -48,15 +51,16 @@ public class Main extends JavaPlugin {
 			log.info("Only players are supported!!!");
 			return true;
 		}
-		Player player = (Player) sender;
-		ExperienceManager exp_man = new ExperienceManager(player);
+		OfflinePlayer player = (Player) sender;
+		Player expPlayer = (Player) player;
+		ExperienceManager exp_man = new ExperienceManager(expPlayer);
 		int current_xp = exp_man.getCurrentExp();
-		double bal = econ.getBalance(player.getName());
+		double bal = econ.getBalance(player);
 		if (label.equalsIgnoreCase("savexp")) {
-			EconomyResponse r = econ.depositPlayer(player.getName(),current_xp);
+			EconomyResponse r = econ.depositPlayer(player,current_xp);
 			if (r.transactionSuccess()) {
 				exp_man.changeExp((double)current_xp*-1);
-				sender.sendMessage("You saved all your experience and were given $" + current_xp + ". You now have a balance of $" + econ.getBalance(player.getName()) + ".");
+				sender.sendMessage("You saved all your experience and were given $" + current_xp + ". You now have a balance of $" + econ.getBalance(player) + ".");
 			} else {
 				sender.sendMessage("Could not save your experience. You have " + current_xp + " xp and a balance of $" + bal + ".");
 			}
@@ -71,7 +75,7 @@ public class Main extends JavaPlugin {
 					entire_bal=false;
 				}
 			}
-			EconomyResponse r = econ.withdrawPlayer(player.getName(),bal);
+			EconomyResponse r = econ.withdrawPlayer(player,bal);
 			if (r.transactionSuccess()) {
 				exp_man.changeExp(bal);
 				if (!entire_bal) {

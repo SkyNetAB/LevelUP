@@ -26,6 +26,10 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
+<<<<<<< HEAD
+=======
+Icon
+>>>>>>> origin/master
 
 # Thumbnails
 ._*
